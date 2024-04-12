@@ -16,8 +16,8 @@ export const renderWinnersBlock = () => `
     </thead>
     <tbody>
     ${store.winners
-    .map(
-      (winner, index) => `
+        .map(
+            (winner, index) => `
         <tr>
           <td>${index + 1}</td>
           <td>${carImage(winner.car.color)}</td>
@@ -25,8 +25,8 @@ export const renderWinnersBlock = () => `
           <td>${winner.wins}</td>
           <td>${winner.time}</td>
         </tr>
-        `,
-    )
-    .join(' ')}
+        `
+        )
+        .join(' ')}
     </tbody>
   </table>`;

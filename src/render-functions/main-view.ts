@@ -3,10 +3,10 @@ import { renderGarageBlock } from './garage-block';
 import { renderWinnersBlock } from './winners-block';
 
 export const renderMainView = async () => {
-  const fragment = new DocumentFragment();
-  const main = document.createElement('main');
-  main.classList.add('main');
-  main.innerHTML = `
+    const fragment = new DocumentFragment();
+    const main = document.createElement('main');
+    main.classList.add('main');
+    main.innerHTML = `
   <div class="navigation-panel wrapper">
     <div class="nav-btn" id="to-garage">To Garage</div>
     <div class="nav-btn" id="to-winners">To Winners</div>
@@ -45,9 +45,9 @@ export const renderMainView = async () => {
     </div>
   </div>
   `;
-  fragment.appendChild(main);
-  document.body.innerHTML = '';
-  document.body.appendChild(fragment);
+    fragment.appendChild(main);
+    document.body.innerHTML = '';
+    document.body.appendChild(fragment);
 
-  (document.getElementById('create-name') as HTMLInputElement).value = generateRandomCarName();
+    (document.getElementById('create-name') as HTMLInputElement).value = generateRandomCarName();
 };
