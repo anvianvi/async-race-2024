@@ -1,16 +1,10 @@
-import { Car, Winner } from './helpers/store';
-import { CarTemplate } from './types';
+import { Car, CarDriveResponse, CarTemplate, GetCarsResponse, Winner, WinnerTemplate, WinnersResponse } from './types';
 
 const base = 'https://flint-brazen-catshark.glitch.me/';
 // const base = 'http://127.0.0.1:3000/'
 const garage = `${base}/garage`;
 const engine = `${base}/engine`;
 const winners = `${base}/winners`;
-
-export interface GetCarsResponse {
-    items: Car[];
-    count: number;
-}
 
 export const getCars = async (
     numberOfPageToDisplay: number,
@@ -125,17 +119,6 @@ export const stopCar = async (id: number): Promise<void> => {
     }
 };
 
-// export const startCar = async (id) => (await fetch(`${engine}?id=${id}&status=started`, {
-//   method: 'PATCH',
-// })).json();
-
-// export const stopCar = async (id) => (await fetch(`${engine}?id=${id}&status=stopped`, {
-//   method: 'PATCH',
-// })).json();
-type CarDriveResponse = {
-    success: boolean;
-};
-
 export const driveCar = async (id: number): Promise<CarDriveResponse> => {
     try {
         const response = await fetch(`${engine}?id=${id}&status=drive`, { method: 'PATCH' });
@@ -151,11 +134,6 @@ export const driveCar = async (id: number): Promise<CarDriveResponse> => {
 
 export const getSortOrder = (sort: string | null, order: string | null): string => {
     return sort && order ? `&_sort=${sort}&_order=${order}` : '';
-};
-
-type WinnersResponse = {
-    items: Winner[];
-    count: string | null;
 };
 
 export const getWinners = async (
@@ -209,11 +187,6 @@ export const deleteWinner = async (id: number): Promise<void> => {
         throw new Error(`Error deleting winner with ID ${id}: ${error}`);
     }
 };
-type WinnerTemplate = {
-    id: number;
-    wins: number;
-    time: number;
-};
 
 export const createWinner = async (body: WinnerTemplate): Promise<WinnerTemplate> => {
     try {
@@ -233,7 +206,7 @@ export const createWinner = async (body: WinnerTemplate): Promise<WinnerTemplate
     }
 };
 
-export const updateWinner = async (id: number, body: any): Promise<Winner> => {
+export const updateWinner = async (id: number, body: WinnerTemplate): Promise<Winner> => {
     try {
         const response = await fetch(`${winners}/${id}`, {
             method: 'PUT',

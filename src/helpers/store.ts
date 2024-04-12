@@ -1,36 +1,7 @@
-// const store = {
-//   carsPage: 1,
-//   cars: [],
-//   carsCount: 1,
-//   winnersPage: 1,
-//   winners: [],
-//   winnersCount: 0,
-//   view: 'garagePage',
-//   sortBy: null,
-//   sortOrder: null,
-//   selectedCarID: null,
-//   animation: {},
-// };
-
-// export default store;
-export type Car = {
-    id: number;
-    name: string;
-    color: string;
-};
+import { Car, Winner } from '../types';
 
 type Animation = {
     // animation properties here
-};
-
-export type Winner = {
-    id: number;
-    wins: number;
-    time: number;
-    car: {
-        color: string;
-        name: string;
-    };
 };
 
 export type Store = {

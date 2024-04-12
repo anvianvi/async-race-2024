@@ -3,9 +3,10 @@
 // import pageListeners from './list-of-page-listeners';
 
 import { renderMainView } from './render-functions/main-view';
+import updateState from './update-state';
 
 const startApp = async () => {
-    // await updateState();
+    await updateState();
     renderMainView();
     // pageListeners();
 };
