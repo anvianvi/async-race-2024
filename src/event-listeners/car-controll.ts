@@ -1,4 +1,6 @@
 import { deleteCar, deleteWinner, getCar, getWinner } from '../api';
+import { startDriving } from '../helpers/start-driving';
+import { stopDriving } from '../helpers/stop-driving';
 import { store } from '../helpers/store';
 import { renderGarageBlock } from '../render-functions/garage-block';
 import { renderWinnersBlock } from '../render-functions/winners-block';

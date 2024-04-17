@@ -38,3 +38,8 @@ export type WinnersResponse = {
     items: Winner[];
     count: string | null;
 };
+
+export type startStopCarResponse = {
+    velocity: number;
+    distance: number;
+};

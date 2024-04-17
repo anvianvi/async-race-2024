@@ -1,8 +1,12 @@
 import { Car, Winner } from '../types';
 
 type Animation = {
-    // animation properties here
+    id: number;
 };
+
+// interface AnimationState {
+//     id: number;
+// }
 
 export type Store = {
     carsPage: number;
@@ -17,7 +21,7 @@ export type Store = {
     // _order=['ASC'|'DESC']
     sortOrder: 'asc' | 'desc' | null;
     selectedCarID: number | null;
-    animation: Animation;
+    animation: Animation[];
 };
 
 export const store: Store = {
@@ -31,7 +35,7 @@ export const store: Store = {
     sortBy: null,
     sortOrder: null,
     selectedCarID: null,
-    animation: {},
+    animation: [],
 };
 
 // export default store;

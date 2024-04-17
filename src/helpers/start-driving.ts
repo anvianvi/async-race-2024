@@ -1,3 +1,6 @@
+import { driveCar, startCar } from '../api';
+import { calculateDistance } from './calculate-distanse';
+import { animation } from './car-animation';
 import { store } from './store';
 
 export const startDriving = async (id: number): Promise<{ success: boolean; id: number; time: number }> => {
@@ -20,6 +23,16 @@ export const startDriving = async (id: number): Promise<{ success: boolean; id: 
 
     const animationData = animation(car, currentDistance, time);
 
+    // interface AnimationStore {
+    //     [key: number]: AnimationState;
+    // }
+
+    // Define a store for animations
+    // const store: {
+    //     animation: AnimationStore;
+    // } = {
+    //     animation: {},
+    // };
     store.animation[id] = animationData;
 
     const driveData = await driveCar(id);

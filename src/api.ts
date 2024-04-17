@@ -1,4 +1,13 @@
-import { Car, CarDriveResponse, CarTemplate, GetCarsResponse, Winner, WinnerTemplate, WinnersResponse } from './types';
+import {
+    Car,
+    CarDriveResponse,
+    CarTemplate,
+    GetCarsResponse,
+    Winner,
+    WinnerTemplate,
+    WinnersResponse,
+    startStopCarResponse,
+} from './types';
 
 const base = 'https://flint-brazen-catshark.glitch.me/';
 // const base = 'http://127.0.0.1:3000/'
@@ -93,7 +102,7 @@ export const updateCar = async (body: CarTemplate, id: number): Promise<Car> => 
     }
 };
 
-export const startCar = async (id: number): Promise<void> => {
+export const startCar = async (id: number): Promise<startStopCarResponse> => {
     try {
         const response = await fetch(`${engine}?id=${id}&status=started`, {
             method: 'PATCH',
@@ -101,12 +110,13 @@ export const startCar = async (id: number): Promise<void> => {
         if (!response.ok) {
             throw new Error('Failed to start car');
         }
+        return (await response.json()) as startStopCarResponse;
     } catch (error) {
         throw new Error(`Error starting car with ID ${id}:: ${error}`);
     }
 };
 
-export const stopCar = async (id: number): Promise<void> => {
+export const stopCar = async (id: number): Promise<startStopCarResponse> => {
     try {
         const response = await fetch(`${engine}?id=${id}&status=stopped`, {
             method: 'PATCH',
@@ -114,6 +124,7 @@ export const stopCar = async (id: number): Promise<void> => {
         if (!response.ok) {
             throw new Error('Failed to stop car');
         }
+        return (await response.json()) as startStopCarResponse;
     } catch (error) {
         throw new Error(`Error stopping car with ID ${id}: ${error}`);
     }
