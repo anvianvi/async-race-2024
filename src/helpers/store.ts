@@ -4,10 +4,6 @@ type Animation = {
     id: number;
 };
 
-// interface AnimationState {
-//     id: number;
-// }
-
 export type Store = {
     carsPage: number;
     cars: Car[];
@@ -16,9 +12,7 @@ export type Store = {
     winners: Winner[];
     winnersCount: number;
     view: 'garagePage' | 'winnersPage';
-    sortBy: string | null; //_sort=['id'|'wins'|'time']
-
-    // _order=['ASC'|'DESC']
+    sortBy: string | null;
     sortOrder: 'asc' | 'desc' | null;
     selectedCarID: number | null;
     animation: Animation[];
@@ -37,5 +31,3 @@ export const store: Store = {
     selectedCarID: null,
     animation: [],
 };
-
-// export default store;

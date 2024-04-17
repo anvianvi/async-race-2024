@@ -1,4 +1,4 @@
-import pageListeners from './list-of-page-listeners';
+import { pageListeners } from './list-of-page-listeners';
 import { renderMainView } from './render-functions/main-view';
 import { updateState } from './update-state';
 

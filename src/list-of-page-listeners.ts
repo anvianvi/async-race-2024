@@ -9,7 +9,7 @@ import { sortingCardsButtonsListener } from './event-listeners/sort-winners';
 import { updateSelectedCar } from './event-listeners/update-car';
 import { viewBlockSelector } from './event-listeners/view-block-selector';
 
-const pageListeners = async () => {
+export const pageListeners = async () => {
     viewBlockSelector();
     buttonToggler();
     generatePackOfCars();
@@ -21,5 +21,3 @@ const pageListeners = async () => {
     creteNewCar();
     updateSelectedCar();
 };
-
-export default pageListeners;

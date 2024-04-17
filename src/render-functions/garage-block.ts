@@ -28,5 +28,3 @@ export const renderGarageBlock = () => `
       .join('')}
 <p class="winner-mesage" id="winner-mesage"></p>  
 `;
-
-// export default renderGarage;
