@@ -23,16 +23,6 @@ export const startDriving = async (id: number): Promise<{ success: boolean; id: 
 
     const animationData = animation(car, currentDistance, time);
 
-    // interface AnimationStore {
-    //     [key: number]: AnimationState;
-    // }
-
-    // Define a store for animations
-    // const store: {
-    //     animation: AnimationStore;
-    // } = {
-    //     animation: {},
-    // };
     store.animation[id] = animationData;
 
     const driveData = await driveCar(id);
