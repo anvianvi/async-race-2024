@@ -19,7 +19,6 @@ export const updateWinners = async (): Promise<void> => {
         store.winners = items;
         store.winnersCount = Number(count);
     } catch (error) {
-        // console.error('Error updating winners:', error);
         throw error;
     }
 };
@@ -29,7 +28,6 @@ export const updateState = async (): Promise<void> => {
         await updateCars();
         await updateWinners();
     } catch (error) {
-        // console.error('Error updating state:', error);
         throw error;
     }
 };
