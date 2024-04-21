@@ -1,0 +1,42 @@
+{
+    "name": "async-race",
+    "version": "2.0.0",
+    "description": "",
+    "scripts": {
+        "build": "webpack --mode production",
+        "dev": "webpack serve",
+        "lint": "eslint . --ext .ts",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://anvianvi.github.io/async-race-2024/"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "homepage": "https://anvianvi.github.io/async-race-2024/",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^7.3.1",
+        "@typescript-eslint/parser": "^7.3.1",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^12.0.2",
+        "css-loader": "^6.10.0",
+        "dotenv-webpack": "^8.0.1",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-prettier": "^5.1.3",
+        "gh-pages": "^6.1.1",
+        "html-webpack-plugin": "^5.6.0",
+        "prettier": "3.2.5",
+        "style-loader": "^3.3.4",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.4.2",
+        "webpack": "^5.90.1",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.0",
+        "webpack-merge": "^5.10.0"
+    }
+}
