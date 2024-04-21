@@ -11,7 +11,7 @@ const names: string[] = [
     'Volvo',
     'MINI',
     'Toyota',
-    'Volodymyr',
+    'SomeSuperFast',
 ];
 const models: string[] = [
     '911',
@@ -24,7 +24,7 @@ const models: string[] = [
     'XC60',
     '3-door',
     'Corolla',
-    'Zelenskyy',
+    'SuperCar',
 ];
 
 export const generateRandomCarName = (): string => {
